@@ -55,7 +55,7 @@ typedef struct {
     secp256k1::uint256 stride = 1;
 
     bool follow = false;
-}RunConfig;
+} RunConfig;
 
 static RunConfig _config;
 
