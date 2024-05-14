@@ -86,11 +86,9 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)\KeyFinderLib;$(SolutionDir)\AddressUtil;$(SolutionDir)\Logger;$(SolutionDir)\CmdParse;$(SolutionDir)\CLKeySearchDevice;$(SolutionDir)\secp256k1lib;$(SolutionDir)\util;$(SolutionDir)\clUtil;$(OPENCL_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;BUILD_OPENCL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <AdditionalDependencies>OpenCL.lib;Shlwapi.lib;BCrypt.lib;%(AdditionalDependencies)</AdditionalDependencies>

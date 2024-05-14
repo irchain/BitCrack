@@ -20,13 +20,14 @@
 #include "CLKeySearchDevice.h"
 #endif
 
-typedef struct {
+
+struct RunConfig {
     // startKey is the first key. We store it so that if the --continue
     // option is used, the correct progress is displayed. startKey and
     // nextKey are only equal at the very beginning. nextKey gets saved
     // in the checkpoint file.
     secp256k1::uint256 startKey = 1;
-    secp256k1::uint256 nextKey = 1;
+    secp256k1::uint256 nextKey = 1; 
 
     // The last key to be checked
     secp256k1::uint256 endKey = secp256k1::N - 1;
@@ -35,7 +36,7 @@ typedef struct {
     uint64_t checkpointInterval = 60000;
 
     unsigned int threads = 0;
-    unsigned int blocks = 0;
+    unsigned int blocks = 0; 
     unsigned int pointsPerThread = 0;
     
     int compression = PointCompressionType::COMPRESSED;
@@ -55,7 +56,7 @@ typedef struct {
     secp256k1::uint256 stride = 1;
 
     bool follow = false;
-} RunConfig;
+};
 
 static RunConfig _config;
 
@@ -153,8 +154,7 @@ void statusCallback(KeySearchStatus info)
 
 /**
  * Parses the start:end key pair. Possible values are:
- start
- start:end
+ start :end
  start:+offset
  :end
  :+offset
